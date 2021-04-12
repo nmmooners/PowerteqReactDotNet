@@ -19,9 +19,21 @@ namespace backend.Controllers
         }
 
         [HttpGet]
-        public string Get()
+        public ContentResult Get()
         {
-            return "Hello World";
+            return Content("[{\"ItemName\":\"Dishes\", \"complete\":\"false\"}, {\"ItemName\":\"vacumm\", \"complete\":\"true\"}]", "application/json");
+        }
+
+        [HttpPost]
+        public string Post(string inVal)
+        {
+            return "Got to post";
+        }
+
+        [HttpDelete]
+        public string Delete(string inVal)
+        {
+            return "got to delete";
         }
     }
 }
